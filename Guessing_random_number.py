@@ -1,4 +1,3 @@
-
 import random
 
 def even_numbers_random_choice(c, x):

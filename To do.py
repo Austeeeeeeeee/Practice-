@@ -56,3 +56,51 @@ for n in userinput:
 
 print(dic)
 '''
+
+import random
+import time
+
+board = ["-","-","-",
+		 "-","-","-",
+		 "-","-","-"]
+
+winner = None
+gamerunning = True
+
+def printBoard (board):
+	print (board[0] + '|' + board[1] + '|' + board[2])
+	print(board[3] + '|' + board[4] + '|' + board[5])
+	print(board[6] + '|' + board[7] + '|' + board[8])
+
+def player_move(board):
+	player_symbol = 'O'
+	player_input = int(input('Enter a number from 1 to 9: '))
+	index = player_input - 1
+	if 0 <= index < 9 and board[index] == "-":
+		board[index] = player_symbol
+	else:
+		print('This place has been taken!')
+
+def computer_move(board):
+	computer_symbol = 'X'
+	computer_input = random.randint(0,8)
+	print("Now it's computers turn...")
+	time.sleep(3)
+	if board[computer_input] == "-":
+		board[computer_input] = computer_symbol
+
+def checkrow(board):
+	global winner
+	if board[0] == board[1] == board[2] and board != "-"
+		winner = board[0]
+		return True
+
+
+
+
+
+while gamerunning:
+	player_move(board)
+	printBoard(board)
+	computer_move(board)
+	printBoard(board)

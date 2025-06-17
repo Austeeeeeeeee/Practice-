@@ -12,37 +12,58 @@ class Student_grade_calculation():
 		self.class_name = input("Introduce your class name: ")
 
 	def print_student_idendification(self):
-		print("-- STUDENT INFORMATION --")
+		print("----- STUDENT INFORMATION -----")
 		print(f"Student name: {self.name} ")
 		print(f"Student surname: {self.surname} ")
 		print(f"Student class name: {self.class_name}")
 
 
 	def grade_information(self,history,mathematics,art):
-		print("-- GRADE'S INFORMATION --")
+		print("-----  GRADE'S INFORMATION -----")
 		self.dic = {"History": history,
 			   		"Mathematics":mathematics,
 			   		"Arts": art}
 
-
-		print("\n Printing out grades information...")
-		time.sleep(2)
 		for subject, grade in self.dic.items():
 			print(f"{subject}:{grade}")
 
 	def average_grade_calculation(self):
 		average_grade = sum(self.dic.values()) / len(self.dic.values())
-		rounded_average_grade = round(average_grade,1)
-		print(f"Average grade: {rounded_average_grade}")
-		return rounded_average_grade
+		self.rounded_average_grade = round(average_grade,1)
+		print(f"Average grade: {self.rounded_average_grade}")
+		return self.rounded_average_grade
+
+	def grade_classification(self):
+		if self.rounded_average_grade <5:
+			print('Classified for Basic Academy')
+			print('---------------------------------------')
+		elif self.rounded_average_grade >5 and self.rounded_average_grade <=7:
+			print('Classified for Mid Academy')
+			print('---------------------------------------')
+		else:
+			print('Classified for Advanced Academy')
+			print('---------------------------------------')
 
 
 
-step_one = Student_grade_calculation("Marcos","Garcia","B")
-step_one.print_student_idendification()
-print("\n")
-step_one.grade_information(1,1,1)
-step_one.average_grade_calculation()
+student1 = Student_grade_calculation("Marcos","Garcia","B")
+student1.print_student_idendification()
+student1.grade_information(3,8,2)
+student1.average_grade_calculation()
+student1.grade_classification()
+
+student2 = Student_grade_calculation('Patricia','Lopez','C')
+student2.print_student_idendification()
+student2.grade_information(7,9,2)
+student2.average_grade_calculation()
+student2.grade_classification()
+
+student3 = Student_grade_calculation('Sola','Murillo','A')
+student3.print_student_idendification()
+student3.grade_information(6,3,7)
+student3.average_grade_calculation()
+student3.grade_classification()
+
 
 
 '''

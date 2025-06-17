@@ -14,10 +14,9 @@ class Fruitshop():
 		self.shipping_cost = shipping_cost
 
 
-	def valid_user_input(self,valid_range):
-		print('Begun')
+	def valid_user_input(self,product,valid_range):
 		while True:
-			user_input = int(input(f'How many computers do you want? {valid_range}'))
+			user_input = int(input(f'How many {product} do you want? {valid_range}'))
 			if user_input not in valid_range:
 				print('Not enough stock!')
 			else:
@@ -29,7 +28,7 @@ class Fruitshop():
 		if computer_range is None:
 			stock = self.inventory['Computer']['stock']
 			computer_range = list(range(1, stock + 1))
-		self.cart['Computer'] = self.valid_user_input(computer_range)
+		self.cart['Computer'] = self.valid_user_input('computers',computer_range)
 
 	def display_cart(self):
 		print('YOUR CART:')
