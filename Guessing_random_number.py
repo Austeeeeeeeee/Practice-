@@ -33,10 +33,10 @@ print('Is your number lower than 50?')
 user_input = get_valid_input("Enter yes or no: ",['yes','no'])
 
 if user_input == 'yes':
-    question_even_or_odd =  get_valid_input("Is your number even or odd: ",['even','odd'])
+    question_even_or_odd = get_valid_input("Is your number even or odd: ",['even','odd'])
 
     if question_even_or_odd == 'even':
-        question_lower_higher_25 =  get_valid_input("Is your number lower or higher than 25?: ",['lower','higher'])
+        question_lower_higher_25 = get_valid_input("Is your number lower or higher than 25?: ",['lower','higher'])
 
         if question_lower_higher_25  == 'lower':
             first_guess = even_numbers_random_choice(0,25)
